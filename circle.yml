@@ -19,7 +19,7 @@ deployment:
     branch: /.*/
     commands:
       - docker login -e "$DOCK_EMAIL" -u "$DOCK_ID" -p "$DOCK_PWD"
-      - docker tag dockerapp_dockerapp "$DOCK_ID"/dockerapp:"$CIRCLE_SHA1"
-      - docker tag dockerapp_dockerapp "$DOCK_ID"/dockerapp:latest
+      - docker tag devopsdemo_dockerapp "$DOCK_ID"/dockerapp:"$CIRCLE_SHA1"
+      - docker tag devopsdemo_dockerapp "$DOCK_ID"/dockerapp:latest
       - docker push "$DOCK_ID"/dockerapp:"$CIRCLE_SHA1"
       - docker push "$DOCK_ID"/dockerapp:latest
